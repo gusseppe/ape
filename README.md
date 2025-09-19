@@ -131,14 +131,7 @@ Future directions include extending APE to multi-modal medical data, investigati
 
 If you use this work in your research, please cite:
 
-```bibtex
-@article{your_paper_2025,
-  title={Adaptive Prompt Evolution for Continual Learning in Diabetic Retinopathy Detection},
-  author={Your Name and Co-authors},
-  journal={Conference/Journal Name},
-  year={2025}
-}
-```
+[THIS WILL BE UPDATED WITH PAPER DETAILS]
 
 ## Code Structure
 
