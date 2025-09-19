@@ -36,7 +36,7 @@ Our APE framework consists of three core components:
 - **Multi-Architecture Support**: Compatible with attention, residual, and SMLP architectures
 - **Dynamic Buffer Management**: Adaptive sampling based on evolved prompt clustering
 
-![Performance Analysis](extension_plots/performance_analysis.pdf)
+![Performance Analysis](extension_plots/performance_analysis.png)
 *Figure 1: Comprehensive performance analysis showing the effectiveness of APE across different continual learning strategies and neural architectures.*
 
 ## Experimental Setup
@@ -58,36 +58,36 @@ Our APE framework consists of three core components:
 
 ### Prompt Evolution Performance
 
-![Candidate Quality Distribution](extension_plots/candidate_quality_distribution.pdf)
+![Candidate Quality Distribution](extension_plots/candidate_quality_distribution.png)
 *Figure 2: Distribution of prompt candidate quality scores during the evolution process, demonstrating the effectiveness of our selection mechanism.*
 
-![Learning Progression](extension_plots/learning_progression.pdf)
+![Learning Progression](extension_plots/learning_progression.png)
 *Figure 3: Learning progression showing how evolved prompts improve diagnostic accuracy over iterations.*
 
 ### Computational Efficiency Analysis
 
-![Computational Efficiency](extension_plots/computational_efficiency.pdf)
+![Computational Efficiency](extension_plots/computational_efficiency.png)
 *Figure 4: Computational efficiency comparison between traditional approaches and APE, highlighting the balance between performance gains and computational overhead.*
 
 ### Task-Specific Projections
 
-![Task 0 Projections](extension_plots/projection_task_0.pdf) ![Task 1 Projections](extension_plots/projection_task_1.pdf) ![Task 2 Projections](extension_plots/projection_task_2.pdf)
+![Task 0 Projections](extension_plots/projection_task_0.png) ![Task 1 Projections](extension_plots/projection_task_1.png) ![Task 2 Projections](extension_plots/projection_task_2.png)
 
 *Figure 5: t-SNE projections of learned representations for each task, showing improved clustering with evolved prompts across different imaging conditions.*
 
 ### Prompt Component Analysis
 
-![Prompt Component Analysis](extension_plots/prompt_component_analysis.pdf)
+![Prompt Component Analysis](extension_plots/prompt_component_analysis.png)
 *Figure 6: Analysis of different prompt components and their contribution to overall performance, revealing the importance of medical terminology evolution.*
 
 ### Search Space Exploration
 
-![Search Space Exploration](extension_plots/search_space_exploration.pdf)
+![Search Space Exploration](extension_plots/search_space_exploration.png)
 *Figure 7: Visualization of the prompt search space exploration, demonstrating the systematic coverage of semantic variations.*
 
 ### Execution Time Analysis
 
-![Execution Time](extension_plots/tadiler_execution_time.pdf)
+![Execution Time](extension_plots/tadiler_execution_time.png)
 *Figure 8: Execution time comparison across different methods, showing the computational trade-offs of prompt evolution.*
 
 ## Key Findings
