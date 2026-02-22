@@ -1,0 +1,46 @@
+[project]
+name = "ape"
+version = "0.1.0"
+description = "Adaptive Prompt Evolution for Continual Learning in Diabetic Retinopathy Detection"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # Deep learning
+    "torch>=2.0",
+    "torchvision>=0.15",
+
+    # CLIP (OpenAI) — installed from GitHub
+    "clip @ git+https://github.com/openai/CLIP.git",
+    "ftfy>=6.1",         # required by CLIP tokenizer
+    "regex>=2023.0",     # required by CLIP tokenizer
+
+    # DocArray v2 (new API: BaseDoc, DocList, DocVec)
+    "docarray[torch]>=0.30,<0.42",
+
+    # Continual learning framework
+    "avalanche-lib>=0.3.1",
+
+    # LLM / prompt evolution
+    "langchain-openai>=0.1",
+    "openai>=1.0",
+
+    # ML utilities
+    "scikit-learn>=1.2",
+    "scipy>=1.9",
+    "umap-learn>=0.5",
+
+    # Data & visualisation
+    "numpy>=1.24",
+    "pandas>=1.4",
+    "matplotlib>=3.5",
+    "seaborn>=0.12",
+    "Pillow>=9.0",
+
+    # Notebook & dev
+    "ipykernel>=6.0",
+    "rich>=13.0",
+
+    # Pin proxsuite to a version that has pre-built wheels for this platform
+    # (avalanche-lib requires it for GEM; 0.7.2.post1 has no wheel here)
+    "proxsuite>=0.6,<=0.7.2",
+]

@@ -1,8 +1,9 @@
 # Adaptive Prompt Evolution for Continual Learning in Diabetic Retinopathy Detection
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-1.9+-orange.svg)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)](https://pytorch.org/)
 [![CLIP](https://img.shields.io/badge/CLIP-OpenAI-green.svg)](https://github.com/openai/CLIP)
+[![uv](https://img.shields.io/badge/uv-package%20manager-blueviolet)](https://github.com/astral-sh/uv)
 
 ## Abstract
 
@@ -137,48 +138,77 @@ If you use this work in your research, please cite:
 
 ```
 ├── tadiler_dev13_APE_dynamic_prompt.ipynb  # Main implementation notebook
+├── pyproject.toml                          # Project dependencies (uv)
+├── uv.lock                                 # Locked dependency versions
+├── .python-version                         # Python version pin (3.10)
+├── convert_pdf_to_png.py                   # Convert plots for GitHub rendering
 ├── extension_plots/                        # Generated analysis plots
-│   ├── performance_analysis.pdf           # Overall performance results
-│   ├── candidate_quality_distribution.pdf # Prompt evolution analysis
-│   ├── learning_progression.pdf           # Training dynamics
-│   ├── computational_efficiency.pdf       # Efficiency analysis
-│   ├── projection_task_*.pdf              # Task-specific visualizations
-│   ├── prompt_component_analysis.pdf      # Component contribution analysis
-│   ├── search_space_exploration.pdf       # Search strategy visualization
-│   └── tadiler_execution_time.pdf         # Runtime analysis
+│   ├── performance_analysis.png
+│   ├── candidate_quality_distribution.png
+│   ├── learning_progression.png
+│   ├── computational_efficiency.png
+│   ├── projection_task_{0,1,2}.png
+│   ├── prompt_component_analysis.png
+│   ├── search_space_exploration.png
+│   └── tadiler_execution_time.png
 ├── results-*/                             # Experimental results by architecture
 └── README.md                              # This file
 ```
 
 ## Requirements
 
-- Python 3.8+
-- PyTorch 1.9+
-- OpenAI CLIP
-- scikit-learn
-- matplotlib
-- docarray
-- rich
-- PIL
+- Python 3.10+
+- [uv](https://github.com/astral-sh/uv) — fast Python package manager
+
+All dependencies are declared in `pyproject.toml` and pinned in `uv.lock`. Key packages:
+
+| Package | Purpose |
+|---|---|
+| `torch` / `torchvision` | Deep learning backbone |
+| `clip` (OpenAI, from GitHub) | Vision-language embeddings |
+| `docarray[torch] >=0.30` | DocList/BaseDoc data structures |
+| `avalanche-lib` | Continual learning (EWC, Replay, GEM…) |
+| `langchain-openai` | LLM-based prompt generation |
+| `scikit-learn`, `scipy`, `umap-learn` | ML utilities |
+| `matplotlib`, `seaborn`, `pandas` | Data & visualisation |
 
 ## Installation
 
+**1. Install uv** (if not already installed):
 ```bash
-pip install torch torchvision clip-by-openai
-pip install scikit-learn matplotlib docarray rich pillow
-pip install numpy scipy pandas
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**2. Clone the repo and create the environment:**
+```bash
+git clone <repo-url> && cd ape
+uv sync
+```
+
+That's it — uv reads `pyproject.toml`, creates `.venv/`, and installs all dependencies in one step.
+
+**3. Register the Jupyter kernel** (for VS Code / JupyterLab):
+```bash
+.venv/bin/python -m ipykernel install --user --name ape --display-name "APE (uv)"
 ```
 
 ## Usage
 
-1. Load the main notebook: `tadiler_dev13_APE_dynamic_prompt.ipynb`
+1. Open `tadiler_dev13_APE_dynamic_prompt.ipynb` and select the **APE (uv)** kernel
 2. Configure your dataset paths and experimental parameters
 3. Run the APE evolution process for your specific task
 4. Analyze results using the provided visualization tools
 
+**To add or remove packages:**
+```bash
+uv add <package>     # add a new dependency
+uv remove <package>  # remove a dependency
+uv sync              # reinstall everything from the lock file
+```
+
 ## Acknowledgments
 
-We thank the contributors to the APTOS 2019 dataset and the OpenAI CLIP team for making this research possible. Special recognition to the computational resources provided for extensive experimental validation.
+We thank Lenovo for providing the technical infrastructure to run the experiments in this paper. We also thank the contributors to the APTOS 2019 dataset and the OpenAI CLIP team for making this research possible. 
 
 ## License
 
