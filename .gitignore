@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment (uv)
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & large files
+*.pickle
+
+# OS
+.DS_Store
