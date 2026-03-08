@@ -39,6 +39,7 @@ dependencies = [
     # Notebook & dev
     "ipykernel>=6.0",
     "rich>=13.0",
+    "python-dotenv>=1.0",
 
     # Pin proxsuite to a version that has pre-built wheels for this platform
     # (avalanche-lib requires it for GEM; 0.7.2.post1 has no wheel here)

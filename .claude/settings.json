@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(jupyter nbconvert:*)",
+      "Bash(du:*)"
+    ]
+  }
+}
