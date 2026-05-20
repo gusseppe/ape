@@ -29,5 +29,3 @@ reviewer_response_plan_final.md
 *.key
 secrets.*
 
-# Local experiment cache
-ape/
