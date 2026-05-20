@@ -132,7 +132,7 @@ Future directions include extending APE to multi-modal medical data, investigati
 
 If you use this work in your research, please cite:
 
-[THIS WILL BE UPDATED WITH PAPER DETAILS]
+Bravo-Rocca, G., Liu, P., Guitart, J. et al. Adaptive Prompt Evolution for Continual Learning in Diabetic Retinopathy Detection. SN COMPUT. SCI. 7, 457 (2026). (https://link.springer.com/article/10.1007/s42979-026-05036-y)
 
 ## Code Structure
 
