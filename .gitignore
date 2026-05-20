@@ -16,3 +16,18 @@ __pycache__/
 .DS_Store
 
 .env
+
+# Claude Code (AI assistant config — not for public repos)
+.claude/
+CLAUDE.md
+
+# Paper source (may contain unpublished manuscript content)
+sn-article.tex
+reviewer_response_plan_final.md
+
+# API keys / secrets
+*.key
+secrets.*
+
+# Local experiment cache
+ape/
